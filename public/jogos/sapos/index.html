@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Corrida de sapos</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="sapos.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>CORRIDA DE SAPOS</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Pule as pedras, troncos e cactos com Espaço, ↑ ou tocando na pista. A corrida fica cada vez mais rápida.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>DISTÂNCIA</label><b id="distance">0 m</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0 m</b></div>
+  </section>
+
+  <section class="track">
+    <canvas id="canvas"></canvas>
+    <div class="overlay" id="overlay">
+      <p id="overlayText">Toque na pista ou aperte Espaço para começar</p>
+    </div>
+  </section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="sapos.js"></script>
+</body>
+</html>

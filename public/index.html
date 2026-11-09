@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm Demo</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="slot-layout.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<section class="auth" id="auth">
+  <div class="auth-box">
+    <h1 class="title">LUCKY CHARM <small>DEMO</small></h1>
+    <p class="subtitle">PRÊMIOS</p>
+    <div class="tabs">
+      <button type="button" id="tabLogin" class="tab on">Entrar</button>
+      <button type="button" id="tabRegister" class="tab">Criar conta</button>
+    </div>
+    <form id="authForm" autocomplete="on">
+      <input id="inUser" type="text" placeholder="Usuário (3 a 20 caracteres)" autocomplete="username" required>
+      <input id="inPass" type="password" placeholder="Senha (mín. 6 caracteres)" autocomplete="current-password" required>
+      <button type="submit" id="authBtn" class="auth-submit">Entrar</button>
+    </form>
+    <p class="msg" id="authMsg"></p>
+    <a class="auth-guest" href="home.html">Jogar sem conta →</a>
+    <p class="auth-note">A conta só é necessária para Lucky Charm, Crash e Roleta.</p>
+  </div>
+</section>
+
+<main class="game" id="game" hidden>
+  <header class="logo">
+    <h1>LUCKY CHARM <small>SLOT</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="home.html">← Voltar aos jogos</a>
+  </div>
+
+  <div class="machine">
+    <div class="frame" id="frame">
+      <div class="reels" id="reels">
+        <div class="reel"><div class="strip" id="strip0"></div><div class="glass"></div></div>
+        <div class="reel"><div class="strip" id="strip1"></div><div class="glass"></div></div>
+        <div class="reel"><div class="strip" id="strip2"></div><div class="glass"></div></div>
+        <svg id="paylineSvg" class="payline" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+      </div>
+    </div>
+    <div class="winbar"><span>GANHO</span><b id="win">0,00</b></div>
+  </div>
+
+  <div class="dock">
+    <div class="stats">
+      <div class="box"><label>SALDO</label><b id="balance">0,00</b></div>
+      <div class="box bet">
+        <label>APOSTA</label>
+        <div class="betctl">
+          <button type="button" id="betDown">−</button>
+          <b id="bet">10</b>
+          <button type="button" id="betUp">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <button type="button" class="side" id="turbo">Turbo</button>
+      <button type="button" class="spin" id="spin" title="Girar (Espaço)"><span>⟳</span></button>
+      <button type="button" class="side" id="auto">Auto</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button type="button" class="link" id="sound">🔊 Som</button>
+    <button type="button" class="link" id="paytable">Tabela de prêmios</button>
+  </div>
+  <p class="msg" id="msg"></p>
+</main>
+
+<div class="modal" id="modal"><div class="modal-body">
+  <h2>Tabela de prêmios</h2>
+  <p>Três símbolos iguais na mesma linha. A aposta é dividida em 3 linhas.</p>
+  <ul id="paylist"></ul>
+  <p class="blank-note" id="blankNote"></p>
+  <button type="button" id="closeModal">Fechar</button>
+</div></div>
+
+<div class="overlay" id="overlay"><div id="bigtext"></div><div id="bigamount"></div></div>
+<div id="tiger">🐯</div>
+
+<audio id="sndAmbiente" src="ambiente.mp3" loop preload="auto"></audio>
+<audio id="sndGiro" src="giro.mp3" loop preload="auto"></audio>
+<audio id="sndSelecao" src="selecao.mp3" preload="auto"></audio>
+<audio id="sndGanho" src="ganho.mp3" preload="auto"></audio>
+
+<script src="app.js"></script>
+</body>
+</html>

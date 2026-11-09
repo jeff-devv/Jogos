@@ -1,0 +1,37 @@
+/* Junta Blocos: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 440px; text-align: center; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, .35);
+  font-size: clamp(18px, 6vw, 30px);
+  font-weight: 800;
+  color: var(--ink);
+}
+/* do creme ao vermelho: quanto maior o número, mais quente a cor */
+.tile[data-v="2"] { background: #fff3d2; }
+.tile[data-v="4"] { background: #ffe9b0; }
+.tile[data-v="8"] { background: #ffd24a; }
+.tile[data-v="16"] { background: #ffb52e; }
+.tile[data-v="32"] { background: #ff9d00; }
+.tile[data-v="64"] { background: #ff6a00; color: #fff; }
+.tile[data-v="128"] { background: #e8401c; color: #fff; font-size: clamp(16px, 5vw, 26px); }
+.tile[data-v="256"] { background: #c8202a; color: #fff; font-size: clamp(16px, 5vw, 26px); }
+.tile[data-v="512"] { background: #9a1a10; color: #fff; font-size: clamp(16px, 5vw, 26px); }
+.tile[data-v="1024"] { background: #67f27a; font-size: clamp(14px, 4.4vw, 22px); }
+.tile[data-v="2048"],
+.tile[data-v="big"] {
+  background: linear-gradient(180deg, #fff7c9, #ffd24a 55%, #ff9d00);
+  box-shadow: 0 0 16px var(--gold);
+  font-size: clamp(14px, 4.4vw, 22px);
+}

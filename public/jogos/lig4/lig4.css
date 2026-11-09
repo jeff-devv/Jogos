@@ -1,0 +1,22 @@
+/* Lig 4: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 480px; text-align: center; }
+
+.connect {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  padding: 10px;
+  background: linear-gradient(180deg, #1d3fa1, #102466);
+}
+.slot {
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #2a0508;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, .6);
+  cursor: pointer;
+}
+.slot.me { background: radial-gradient(circle at 35% 35%, #fff3a6, #ffd24a 45%, #c8861a); }
+.slot.cpu { background: radial-gradient(circle at 35% 35%, #ff9aa2, #e8202a 45%, #8e0a20); }
+.slot.win { box-shadow: 0 0 0 3px #fff, 0 0 14px #fff; }

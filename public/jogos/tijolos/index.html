@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Quebra-Tijolos</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="tijolos.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>QUEBRA-TIJOLOS</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Mova a raquete com o mouse, o dedo ou as setas e quebre todos os tijolos. Você tem 3 vidas.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>PONTOS</label><b id="score">0</b></div>
+    <div class="box"><label>VIDAS</label><b id="lives">3</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena" id="arena">
+    <canvas id="canvas"></canvas>
+    <div class="arena-msg" id="msg"><p id="msgText">Toque ou aperte Espaço para lançar a bola</p></div>
+  </section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="tijolos.js"></script>
+</body>
+</html>

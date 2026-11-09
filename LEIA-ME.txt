@@ -1,0 +1,27 @@
+LUCKY CHARM (creditos ficticios, so para estudo)
+  20 jogos (Slot, Crash, Roleta e 17 jogos casuais) | Laboratorio de integridade
+
+COMO RODAR NO WINDOWS
+1. Instale o Node.js (versao LTS): https://nodejs.org  e o XAMPP.
+2. De dois cliques em iniciar.bat. Ele liga o Apache e o MySQL do XAMPP
+   e abre o site sozinho. Deixe a janela preta aberta (e a API do Crash).
+3. Site: http://localhost/lucky-charm/public/
+
+COMO RODAR PELO TERMINAL (VS Code)
+   node server.js            API do Crash em http://localhost:3000
+   (o Apache e o MySQL do XAMPP precisam estar ligados)
+
+COMANDOS UTEIS
+   npm test                  roda os 35 testes automaticos
+   npm run attacks           ataques didaticos + relatorio em logs/
+   node simulate.js          retorno (RTP) do Slot Node
+   http://localhost:3000/lab.html   Laboratorio (vulneravel x protegido)
+
+SE DER ERRO
+- "node nao e reconhecido": instale o Node.js e abra o terminal de novo.
+- "porta 3000 em uso": feche o outro programa, ou no PowerShell:
+     $env:PORT=3001; node server.js
+- Crash diz "modo DEMO": o Node foi aberto com NO_DB=1. Feche e rode de novo sem ele.
+- Abrir os .html com dois cliques NAO funciona: use o endereco do Apache acima.
+
+PADRAO DE CODIGO PARA ALTERACOES: veja PADRAO.md

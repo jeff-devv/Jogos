@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Forca</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="forca.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>FORCA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Adivinhe a palavra letra por letra. Clique nas letras ou use o teclado. 6 erros e acabou.</p>
+
+  <section class="stats">
+    <div class="box"><label>ERROS</label><b id="errors">0/6</b></div>
+    <div class="box prize"><label>VITÓRIAS</label><b id="wins">0</b></div>
+    <div class="box"><label>DERROTAS</label><b id="losses">0</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0</b></div>
+  </section>
+
+  <section class="card">
+    <svg class="gallows" viewBox="0 0 200 180" aria-hidden="true">
+      <path class="post" d="M20 170 H120 M50 170 V12 H140 V32"/>
+      <circle class="part" cx="140" cy="48" r="16"/>
+      <path class="part" d="M140 64 V112"/>
+      <path class="part" d="M140 76 L118 98"/>
+      <path class="part" d="M140 76 L162 98"/>
+      <path class="part" d="M140 112 L122 144"/>
+      <path class="part" d="M140 112 L158 144"/>
+    </svg>
+    <div>
+      <p class="category">Categoria: <b id="category"></b></p>
+      <div class="word" id="word" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div class="keyboard" id="keyboard"></div>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="forca.js"></script>
+</body>
+</html>

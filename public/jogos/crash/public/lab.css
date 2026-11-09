@@ -1,0 +1,54 @@
+/* base visual do laboratório (as telas de jogo usam o tema.css do site) */
+html{background:#1b0306}
+html,body{margin:0}
+body{min-height:100vh;font-family:Poppins,Segoe UI,Arial,sans-serif;color:#fff;overflow-x:hidden;
+  background:radial-gradient(ellipse at 50% -10%,#d0252d 0,#8c0f19 38%,#3a060c 75%,#1b0306 100%);background-attachment:fixed}
+.bg-glow{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,rgba(255,200,80,.18),transparent 55%)}
+.banner{position:relative;z-index:2;background:#0d0d0d;color:var(--gold2);text-align:center;font-size:12px;padding:8px 10px;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #ffd24a55}
+.nav{display:flex;justify-content:center;gap:8px;margin-bottom:6px}
+.nav a{color:#ffe9b0;text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid #ffd24a44;background:#00000040}
+.nav a.active{background:linear-gradient(180deg,var(--gold1),var(--gold2));color:#5c0910;border-color:transparent}
+.nav a:not(.active):hover{background:#ffd24a22}
+.title{margin:6px 0 12px}
+.crown{color:var(--gold2);letter-spacing:10px;font-size:12px}
+h1{margin:0;font-family:"Cinzel Decorative",Georgia,serif;font-weight:900;font-size:clamp(28px,7.5vw,42px);letter-spacing:3px;line-height:1.05;
+  background:linear-gradient(180deg,#fffbe0 0,#ffe27a 35%,#e8a317 60%,#fff0a8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 #6b3c00) drop-shadow(0 0 14px rgba(255,170,0,.6))}
+.sub{font-size:12px;letter-spacing:8px;color:#ffe9b0;margin-top:2px;font-weight:600}
+.game{position:relative;z-index:1;margin:0 auto;padding:10px 16px 36px;text-align:center}
+
+.banner.lab{background:#1a0d00;color:#ffb347}
+.game.wide{max-width:980px;text-align:left}
+.game.wide .nav,.game.wide .title{text-align:center}
+.card{background:linear-gradient(180deg,#00000077,#1a050aaa);border:1px solid #ffd24a44;border-radius:16px;padding:14px 16px;margin:12px 0}
+.card h3{margin:0 0 10px;font-size:15px;color:var(--gold2);letter-spacing:.5px}
+.card label{display:block;font-size:11px;letter-spacing:1.5px;color:var(--gold2);font-weight:700;margin-bottom:5px;text-transform:uppercase}
+.pickers{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.seg{display:flex;border:1px solid #ffd24a66;border-radius:10px;overflow:hidden}
+.seg button{flex:1;padding:9px 6px;background:#00000066;color:#ffe9b0;border:0;cursor:pointer;font:600 13px Poppins,sans-serif}
+.seg button.on{background:linear-gradient(180deg,var(--gold1),var(--gold2));color:#5c0910}
+.seg button.on.bad{background:linear-gradient(180deg,#ff9aa2,#ff4d5a);color:#2a0408}
+.hint{font-size:12px;opacity:.8;margin:8px 0 0}
+.hint code,.card code{background:#0007;padding:1px 6px;border-radius:5px;font-family:Consolas,monospace;color:#ffe9b0}
+.liveline{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.tag{background:#ffb347;color:#2a1400;font-weight:800;font-size:11px;letter-spacing:2px;padding:3px 9px;border-radius:6px}
+.livemult{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card input[type=text]{width:100%;font:700 18px Poppins,sans-serif;color:#fff;background:#00000088;border:1px solid #ffd24a77;border-radius:10px;padding:8px 10px}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btnrow .btn{flex:1 1 150px;min-height:44px;font-size:13px}
+.btn.alt{background:#2b0d12;color:#ffe9b0;border-color:#ffd24a66;box-shadow:0 4px 0 #000a}
+.tablewrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{font-size:11px;color:var(--gold2);text-align:left;padding:6px;border-bottom:1px solid #ffd24a55;white-space:nowrap}
+.tbl td{padding:6px;border-bottom:1px solid #ffffff14;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl.small{font-size:12px}
+.tbl tr.rej td{color:#ff9aa2}
+.tbl td.pos{color:#8dff9b;font-weight:700}.tbl td.neg{color:#ff9aa2;font-weight:700}
+.tbl td.flag{background:#ff4d5a22;color:#ffb3b9;font-weight:700}
+.dl{float:right;font-size:12px;color:#ffe9b0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:13px}
+.two h4{margin:0 0 6px;font-size:13px}
+.two ul{margin:0;padding-left:18px;line-height:1.55}
+.two .v h4{color:#ff9aa2}.two .s h4{color:#8dff9b}
+@media (max-width:700px){.pickers,.grid2,.two{grid-template-columns:1fr}}

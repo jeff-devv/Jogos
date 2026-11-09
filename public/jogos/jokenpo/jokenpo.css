@@ -1,0 +1,31 @@
+/* Jokenpô: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 480px; text-align: center; }
+
+.duel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10px;
+}
+.side { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.side span { font-size: 11px; font-weight: 700; letter-spacing: .2em; color: var(--gold); }
+.side b { font-size: clamp(56px, 18vw, 84px); line-height: 1; }
+.vs { font-size: 28px; font-weight: 900; color: var(--gold-soft); }
+
+.choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border-radius: 14px;
+  border: 2px solid var(--gold);
+  background: linear-gradient(160deg, #9a1a10, #3a0508);
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+.choice span { font: 700 13px "Poppins", sans-serif; color: var(--gold-soft); }
+.choice:hover:not(:disabled) { transform: translateY(-3px); }
+.choice:disabled { opacity: .6; cursor: default; }

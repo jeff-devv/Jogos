@@ -1,0 +1,34 @@
+LUCKY CHARM DEMO  (creditos ficticios, so para estudo)
+  Crash (aviao)  |  Laboratorio de integridade  |  Slot
+
+COMO RODAR NO WINDOWS (mais facil)
+1. Instale o Node.js (versao LTS): https://nodejs.org
+2. Descompacte o zip (botao direito > Extrair tudo).
+3. De dois cliques em iniciar.bat. O navegador abre sozinho.
+   Deixe a janela preta aberta enquanto joga.
+
+COMO RODAR PELO TERMINAL (VS Code)
+   Abra a pasta que contem server.js e rode:
+   node server.js
+   Abra http://localhost:3000     (nao precisa de npm install)
+
+PAGINAS
+   /            Crash (jogo normal)
+   /lab.html    Laboratorio (vulneravel x protegido)
+   /slot.html   Slot (jogo anterior)
+
+COMANDOS UTEIS
+   node --test               roda os 35 testes automaticos
+   node lab/run-attacks.js   ataques didaticos + relatorio em logs/
+   node crash-sim.js         retorno (RTP) do Crash por estrategia
+   node simulate.js          retorno (RTP) do Slot
+
+SE DER ERRO
+- "node nao e reconhecido": instale o Node.js e abra o terminal de novo.
+- "Cannot find module ...server.js": voce esta na pasta errada; entre na pasta
+  que tem o server.js (use dir para conferir).
+- "porta 3000 em uso": feche o outro programa, ou no PowerShell:
+     $env:PORT=3001; node server.js     (e abra http://localhost:3001)
+- Windows bloqueou o iniciar.bat: use node server.js pelo terminal.
+- Abrir o index.html com dois cliques NAO funciona: precisa do servidor rodando.
+- Saldo volta a 1000 sempre que reinicia o servidor: e normal (fica na memoria).

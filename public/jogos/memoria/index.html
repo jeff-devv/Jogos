@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Memória</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="memoria.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>MEMÓRIA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Encontre os pares. Quanto menos jogadas, melhor.</p>
+
+  <div class="stats">
+    <div class="box"><label>JOGADAS</label><b id="moves">0</b></div>
+    <div class="box"><label>PARES</label><b><span id="pairs">0</span>/8</b></div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <p class="result" id="result"></p>
+  <button class="again" id="again" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="memoria.js"></script>
+</body>
+</html>

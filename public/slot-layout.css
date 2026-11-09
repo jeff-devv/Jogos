@@ -1,0 +1,351 @@
+/* ============================================================
+   LUCKY CHARM · layout do slot
+   Carrega DEPOIS do style.css e do tema.css (só acerta o "casco" da página).
+   Não mexe em .reels / .reel / .strip / .glass / .payline,
+   então a animação dos rolos continua igual.
+   Para desfazer: apague a linha <link> deste arquivo no HTML.
+   ============================================================ */
+/* o visual comum (faixa, logo, barra do usuário, cores) vem do tema.css */
+/* neutraliza o título antigo do style.css (posição e a "pílula" do subtítulo) */
+.logo { position: static; }
+.logo h1 small { padding: 0; border: 0; border-radius: 0; background: none; font-size: 12px; letter-spacing: .5em; }
+
+/* ---------- máquina ---------- */
+.machine {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /* não encolhe a moldura dos rolos */
+  gap: 14px;
+}
+.frame { filter: drop-shadow(0 16px 28px rgba(0, 0, 0, .5)); }
+
+.winbar {
+  align-self: center;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  min-width: 200px;
+  padding: 8px 26px;
+  border-radius: 18px;
+  background: var(--panel-deep);
+  border: 1px solid var(--line);
+}
+.winbar span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--gold);
+}
+.winbar b {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 16px rgba(255, 210, 74, .5);
+}
+
+/* ---------- painel inferior (mesmos "boxes" do Crash) ---------- */
+.dock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(72, 5, 12, .85), rgba(34, 2, 6, .9));
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stats .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 80px;
+  padding: 10px 8px;
+  border-radius: 16px;
+  background: var(--panel-deep);
+  border: 1px solid var(--line);
+}
+.stats .box label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .22em;
+  color: var(--gold);
+}
+.stats .box > b {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.stats .box.bet .betctl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.stats .box.bet .betctl b {
+  min-width: 62px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+/* botões "½" e "2×" do Crash: dourados, com base 3D */
+.stats .box.bet .betctl button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font: 800 20px/1 "Poppins", sans-serif;
+  color: var(--ink);
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold-2));
+  box-shadow: 0 4px 0 #8a4f00, 0 6px 10px rgba(0, 0, 0, .35);
+  cursor: pointer;
+  transition: transform .1s, box-shadow .1s;
+}
+.stats .box.bet .betctl button:active { transform: translateY(3px); box-shadow: 0 1px 0 #8a4f00; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.controls .spin { flex: none; }
+.controls .side {
+  flex: none;
+  min-width: 92px;
+  min-height: 48px;
+  padding: 0 18px;
+  font: 800 14px "Poppins", "Segoe UI", sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform .12s, filter .12s;
+}
+.controls .side:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.controls .side:active { transform: translateY(2px); }
+
+/* ---------- rodapé: links sublinhados, como no Crash ---------- */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin-top: 20px;
+}
+.footer .link {
+  padding: 4px 2px;
+  font: 600 13px "Poppins", "Segoe UI", sans-serif;
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  opacity: .92;
+  transition: color .15s, opacity .15s;
+}
+.footer .link:hover { color: var(--gold); opacity: 1; }
+
+.msg {
+  min-height: 22px;
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff9db0;
+}
+
+/* ---------- janela da tabela de prêmios ---------- */
+.modal-body {
+  box-sizing: border-box;
+  width: min(92vw, 420px);
+  max-height: 86vh;
+  overflow: auto;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #4a050c, #2a0005);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .65);
+}
+
+/* ---------- foco de teclado ---------- */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff3a0;
+  outline-offset: 2px;
+}
+
+/* ---------- telas pequenas ---------- */
+@media (max-width: 400px) {
+  .game { padding: 10px 10px 24px; }
+  .dock { padding: 12px; }
+  .controls { gap: 12px; }
+  .controls .side { min-width: 80px; padding: 0 12px; }
+  .stats .box > b { font-size: 22px; }
+}
+
+/* ---------- rolos (garante a máquina mesmo sem o style.css) ---------- */
+.frame {
+  padding: 16px;
+  border-radius: 26px;
+  position: relative;
+  background: linear-gradient(160deg, #fff3a6, #f2b01e 40%, #a85a00 65%, #ffd23f 90%);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .6), 0 0 18px rgba(255, 210, 74, .45);
+}
+.reels {
+  display: flex;
+  gap: 8px;
+  background: #1a0306;
+  padding: 10px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: inset 0 4px 14px rgba(0, 0, 0, .9), 0 0 0 2px #ffd23f;
+}
+.reel {
+  flex: 1;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  background: linear-gradient(#fffdf6, #f1e7d0 50%, #fffdf6);
+}
+.strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  will-change: transform;
+}
+.strip.spinning { filter: blur(2.5px) saturate(1.2); }
+.glass {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  z-index: 1;
+  background: linear-gradient(rgba(60, 0, 0, .45), rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 78%, rgba(60, 0, 0, .45));
+}
+.cell {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 58px;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, .3));
+}
+.cell.win {
+  background: radial-gradient(circle, rgba(255, 240, 150, .95), rgba(255, 140, 0, .4));
+  border-radius: 12px;
+}
+.payline {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  pointer-events: none;
+  z-index: 2;
+}
+.payline line { stroke-width: 3; vector-effect: non-scaling-stroke; }
+.boom {
+  position: absolute;
+  font-size: 70px;
+  pointer-events: none;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+
+/* botão de girar */
+.controls .spin {
+  width: 104px;
+  height: 104px;
+  flex: none;
+  padding: 0;
+  border-radius: 50%;
+  border: 6px solid #ffe27a;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 28%, #c8ffb0, #3ad05a 35%, #0f8a24 75%, #065a16);
+  box-shadow: 0 6px 0 #064a12, 0 10px 22px rgba(0, 0, 0, .55);
+}
+.controls .spin span { font-size: 48px; color: #fff; text-shadow: 0 2px 0 #064a12; }
+.controls .spin:disabled { filter: grayscale(.7); cursor: not-allowed; }
+
+/* janelas ocultas por padrão */
+.modal, .overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .75);
+  z-index: 10;
+}
+.modal.show { display: flex; }
+.overlay { flex-direction: column; pointer-events: none; background: none; }
+.overlay.show { display: flex; }
+#tiger { position: fixed; bottom: 40px; left: 0; font-size: 84px; z-index: 12; pointer-events: none; opacity: 0; }
+/* ---------- tela de login ---------- */
+.auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.auth-box {
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  background: linear-gradient(160deg, #9a1a10, #3a0508);
+  border: 2px solid #ffd23f;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 0 40px rgba(255, 210, 74, .27);
+}
+.auth-box .title { font-size: 34px; margin: 0 0 4px; }
+.auth-box .subtitle { margin: 0 0 16px; letter-spacing: 7px; color: #ffe9a6; font-weight: 700; font-size: 13px; }
+.tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.tab {
+  flex: 1; padding: 8px; border-radius: 10px;
+  border: 2px solid #ffd23f; background: transparent;
+  color: #ffd23f; font-weight: 700; cursor: pointer;
+}
+.tab.on { background: linear-gradient(90deg, #ffd23f, #ff8a00); color: #4a0a06; }
+#authForm { display: flex; flex-direction: column; gap: 10px; }
+#authForm input {
+  padding: 10px; border-radius: 8px;
+  border: 1px solid #ffd23f88; background: #14000a; color: #fff; font-size: 15px;
+}
+.auth-submit {
+  padding: 10px; border-radius: 10px; border: 0;
+  font-weight: 800; font-size: 16px; cursor: pointer;
+  background: linear-gradient(90deg, #5eea6a, #0f8a24); color: #fff;
+}
+/* atalho para os jogos que não precisam de conta */
+.auth-guest {
+  display: inline-block; margin-top: 4px; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid #ffd23f88; color: #ffd23f; font-weight: 700; text-decoration: none;
+}
+.auth-guest:hover { background: #ffd23f; color: #4a0a06; }
+.auth-note { margin: 10px 0 0; font-size: 12px; color: #ffe9a6; opacity: .85; }
+
+.controls .side.on {
+  background: linear-gradient(90deg, #5eea6a, #0f8a24);
+  color: #fff;
+  border: 1px solid #7dff9a;
+  box-shadow: 0 0 14px rgba(94, 234, 106, .6);
+}

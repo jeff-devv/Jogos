@@ -1,0 +1,23 @@
+/* Sequência de Cores: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 420px; text-align: center; }
+
+.pads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+.pad-color {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 18px;
+  cursor: pointer;
+  opacity: .45;
+  transition: opacity .1s, transform .1s, box-shadow .1s;
+}
+.pad-color.c0 { background: #1f8a3a; border-top-left-radius: 50%; }
+.pad-color.c1 { background: #c8202a; border-top-right-radius: 50%; }
+.pad-color.c2 { background: #ffb52e; border-bottom-left-radius: 50%; }
+.pad-color.c3 { background: #1d5fd1; border-bottom-right-radius: 50%; }
+.pad-color.lit { opacity: 1; transform: scale(1.04); box-shadow: 0 0 24px rgba(255, 255, 255, .55); }

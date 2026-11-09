@@ -1,0 +1,32 @@
+/* Memória: só o que é do jogo (faixa, logo, barra, placar, .info e .again vêm do tema.css) */
+.game { max-width: 460px; text-align: center; }
+
+
+.stats { grid-template-columns: 1fr 1fr; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px;
+  border-radius: 18px;
+  background: var(--panel);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(255, 157, 0, .25), 0 16px 28px rgba(0, 0, 0, .5);
+}
+.tile {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: 2px solid var(--gold);
+  background: linear-gradient(160deg, #9a1a10, #3a0508);
+  font-size: 30px;
+  color: var(--gold-soft);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+  transition: transform .15s;
+}
+.tile:hover { transform: translateY(-2px); }
+.tile.open { background: #fff8dc; color: #000; }
+.tile.done { background: linear-gradient(160deg, #1f8a3a, #0a4a18); border-color: var(--green); cursor: default; }
+
+.result { min-height: 24px; margin: 14px 0 6px; color: var(--green); font-weight: 700; font-size: 16px; }

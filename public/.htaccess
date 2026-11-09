@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Libera o site (a raiz do projeto bloqueia tudo; ver ../.htaccess)
+Require all granted

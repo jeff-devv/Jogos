@@ -1,0 +1,3 @@
+# Só a pasta public/ fica acessível pelo Apache.
+# Código do Node (server.js, lib/, lab/, tests/), node_modules e _backup/ ficam bloqueados.
+Require all denied

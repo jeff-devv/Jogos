@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Quebra-Cabeça</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="deslize.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>QUEBRA-CABEÇA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Toque nas peças ao lado do espaço vazio para colocá-las em ordem, de 1 a 8.</p>
+
+  <section class="stats">
+    <div class="box"><label>JOGADAS</label><b id="moves">0</b></div>
+    <div class="box"><label>TEMPO</label><b id="time">0</b></div>
+    <div class="box prize"><label>VITÓRIAS</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena puzzle" id="puzzle"></section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="deslize.js"></script>
+</body>
+</html>

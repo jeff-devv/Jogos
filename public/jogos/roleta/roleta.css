@@ -1,0 +1,163 @@
+/* Roleta: só o que é do jogo (faixa, logo, barra do usuário, placar e histórico vêm do tema.css) */
+.game { max-width: 720px; text-align: center; }
+
+/* fichas do histórico: número na cor da casa */
+.chips .num {
+  flex: none;
+  min-width: 30px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+/* cores das casas (roda, tabuleiro e histórico) */
+.red { background: #c8102e; }
+.black { background: #161616; }
+.green { background: #0a7a2f; }
+
+/* ---------- roda ---------- */
+.wheel-wrap { margin: 4px 0 14px; }
+.wheel-box {
+  position: relative;
+  width: min(300px, 78vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--gold), 0 0 0 10px rgba(255, 157, 0, .35), 0 18px 34px rgba(0, 0, 0, .55);
+}
+.wheel { display: block; width: 100%; height: 100%; }
+.wheel text { font: 700 7px "Poppins", sans-serif; fill: #fff; text-anchor: middle; }
+
+/* a bolinha gira no sentido contrário da roda e cai na casa sorteada (sempre no topo) */
+.ball-orbit { position: absolute; inset: 0; pointer-events: none; }
+.ball {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: 4.6%;
+  aspect-ratio: 1;
+  margin-left: -2.3%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, #d9d9d9 55%, #8c8c8c);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+}
+.pointer {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  margin-left: -9px;
+  border: 9px solid transparent;
+  border-top: 12px solid var(--gold);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .5));
+}
+
+.result { min-height: 28px; margin-top: 14px; font-size: 18px; font-weight: 800; color: var(--gold-soft); }
+.result.win { color: var(--green); }
+
+/* ---------- valor da aposta ---------- */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.amount label { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 700; letter-spacing: .2em; color: var(--gold); }
+.amount input {
+  width: 120px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font: 800 20px "Poppins", sans-serif;
+  text-align: center;
+}
+.amount input:focus { outline: 2px solid var(--gold); }
+.hint { flex: 1; margin: 0; font-size: 12px; line-height: 1.45; color: var(--cream); opacity: .85; }
+
+/* ---------- tabuleiro ---------- */
+.table-wrap { overflow-x: auto; padding-bottom: 4px; }
+.table {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(12, 1fr) 1.2fr;
+  grid-template-rows: repeat(3, 44px) 38px 38px;
+  gap: 4px;
+  min-width: 620px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #0b4a22;
+  border: 2px solid var(--gold);
+}
+.cell {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 6px;
+  color: #fff;
+  font: 700 14px "Poppins", sans-serif;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .1s, box-shadow .15s;
+}
+.cell.out { background: rgba(0, 0, 0, .25); font-size: 12px; letter-spacing: .04em; }
+.cell.out.red { background: #c8102e; }
+.cell.out.black { background: #161616; }
+.cell:hover:not(:disabled) { box-shadow: inset 0 0 0 2px var(--gold); }
+.cell:active:not(:disabled) { transform: scale(.96); }
+.cell:disabled { cursor: default; }
+.cell.drawn { box-shadow: 0 0 0 3px #fff, 0 0 16px 4px var(--gold); z-index: 1; }
+.cell.hit .chip { background: var(--green); color: var(--ink); }
+
+/* ficha com o valor apostado na casa */
+.cell .chip {
+  position: absolute;
+  right: -4px;
+  bottom: -6px;
+  z-index: 2;
+  padding: 1px 5px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+}
+
+/* ---------- botões ---------- */
+.actions { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; margin-top: 14px; }
+.btn {
+  min-height: 50px;
+  border: 0;
+  border-radius: 14px;
+  font: 800 16px "Poppins", sans-serif;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.spin {
+  color: #fff;
+  background: linear-gradient(180deg, #4be06a, #18b034 55%, #0b6a1c);
+  box-shadow: 0 4px 0 #064a12, inset 0 0 0 2px rgba(255, 255, 255, .35);
+}
+.btn.clear {
+  color: var(--cream);
+  background: rgba(0, 0, 0, .4);
+  border: 1px solid var(--line);
+}
+.btn:not(:disabled):hover { filter: brightness(1.08); }
+
+.msg { min-height: 20px; margin: 12px 0 0; font-size: 14px; color: var(--cream); }
+.msg.err { color: var(--danger); }
+
+@media (max-width: 560px) {
+  .controls { flex-direction: column; align-items: stretch; text-align: center; }
+  .amount input { width: 100%; }
+}

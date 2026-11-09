@@ -1,0 +1,18 @@
+/* Cobrinha: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 460px; text-align: center; }
+#canvas { aspect-ratio: 1; }
+
+/* setas na tela para quem joga no celular */
+.pad {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  grid-template-areas: ". up ." "left down right";
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.pad .tool { padding: 10px 0; font-size: 18px; }
+.pad [data-dir="up"] { grid-area: up; }
+.pad [data-dir="left"] { grid-area: left; }
+.pad [data-dir="down"] { grid-area: down; }
+.pad [data-dir="right"] { grid-area: right; }

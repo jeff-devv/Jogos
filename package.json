@@ -1,0 +1,15 @@
+{
+  "name": "lucky-charm",
+  "version": "2.1.0",
+  "description": "Demo educativa (Slot, Crash, Memória) com créditos fictícios e laboratório de integridade",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "simulate": "node simulate.js",
+    "attacks": "node lab/run-attacks.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.24.5"
+  }
+}

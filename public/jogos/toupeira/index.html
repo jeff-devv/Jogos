@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Pega-Toupeira</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="toupeira.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>PEGA-TOUPEIRA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Toque nas toupeiras 🐹 antes que elas se escondam. Cuidado com as bombas 💣! Você tem 30 segundos.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>PONTOS</label><b id="score">0</b></div>
+    <div class="box"><label>TEMPO</label><b id="time">30</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena holes" id="holes"></section>
+  <button class="again" id="startBtn" type="button">Começar</button>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="toupeira.js"></script>
+</body>
+</html>

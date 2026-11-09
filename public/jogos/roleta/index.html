@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Roleta</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="roleta.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>ROLETA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <section class="history" aria-label="Últimos números">
+    <span class="hlabel">ÚLTIMOS</span>
+    <div class="chips" id="history"><span class="empty">nenhuma rodada ainda</span></div>
+  </section>
+
+  <section class="wheel-wrap">
+    <div class="wheel-box">
+      <svg class="wheel" id="wheel" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+      <div class="ball-orbit" id="ballOrbit"><div class="ball" id="ball"></div></div>
+      <div class="pointer"></div>
+    </div>
+    <div class="result" id="result" aria-live="polite">Faça suas apostas</div>
+  </section>
+
+  <section class="stats">
+    <div class="box"><label>SALDO</label><b id="balance">0,00</b></div>
+    <div class="box"><label>APOSTADO</label><b id="staked">0,00</b></div>
+    <div class="box prize"><label>GANHO</label><b id="prize">0,00</b></div>
+  </section>
+
+  <section class="controls">
+    <div class="amount">
+      <label for="amount">VALOR POR CLIQUE</label>
+      <input id="amount" type="text" inputmode="decimal" value="5,00" autocomplete="off">
+    </div>
+    <p class="hint">Digite o valor e clique nas casas do tabuleiro. Cada clique soma esse valor na casa.
+      Clique com o botão direito (ou segure no celular) para tirar a aposta da casa.</p>
+  </section>
+
+  <div class="table-wrap">
+    <div class="table" id="table"></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn clear" id="clear" type="button">LIMPAR</button>
+    <button class="btn spin" id="spin" type="button">GIRAR</button>
+  </div>
+
+  <p class="msg" id="msg"></p>
+</main>
+<script src="roleta.js"></script>
+</body>
+</html>

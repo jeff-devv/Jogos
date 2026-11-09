@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Campo Minado</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="minado.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>CAMPO MINADO</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Abra todas as casas sem mina. O número mostra quantas minas estão em volta. Clique com o botão direito (ou use o modo 🚩) para marcar.</p>
+
+  <section class="stats">
+    <div class="box"><label>MINAS</label><b id="mines">10</b></div>
+    <div class="box"><label>TEMPO</label><b id="time">0</b></div>
+    <div class="box prize"><label>VITÓRIAS</label><b id="best">0</b></div>
+  </section>
+
+  <div class="tools"><button class="tool" id="flagMode" type="button">🚩 Marcar: desligado</button></div>
+  <section class="arena field" id="field"></section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="minado.js"></script>
+</body>
+</html>

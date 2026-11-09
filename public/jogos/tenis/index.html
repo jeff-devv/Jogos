@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Tênis de Mesa</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="tenis.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>TÊNIS DE MESA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Mova sua raquete (à esquerda) com o mouse, o dedo ou as setas. Quem fizer 5 pontos primeiro vence.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>VOCÊ</label><b id="me">0</b></div>
+    <div class="box"><label>CPU</label><b id="cpu">0</b></div>
+    <div class="box"><label>VITÓRIAS</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena" id="arena">
+    <canvas id="canvas"></canvas>
+    <div class="arena-msg" id="msg"><p id="msgText">Toque ou aperte Espaço para sacar</p></div>
+  </section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="tenis.js"></script>
+</body>
+</html>

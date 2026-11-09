@@ -1,0 +1,18 @@
+/* Contas Rápidas: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 460px; text-align: center; }
+
+.sum { padding: 18px 14px; margin-bottom: 14px; }
+.question { margin: 4px 0 16px; font-size: clamp(30px, 10vw, 44px); font-weight: 900; color: #fff; }
+.answers { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.answer {
+  min-height: 60px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel-deep);
+  color: var(--gold-soft);
+  font: 800 24px "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background .15s;
+}
+.answer:hover:not(:disabled) { background: rgba(255, 210, 74, .18); }
+.answer.wrong { background: #8e0a20; border-color: var(--danger); color: #fff; }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm - Admin</title>
+<style>
+  body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#1a0508;color:#ffe9b0;padding:20px}
+  h1{color:#ffd24a;margin-top:0}
+  input,select{padding:8px;border-radius:6px;border:1px solid #ffd24a88;background:#2a0005;color:#fff}
+  button{padding:8px 14px;border:0;border-radius:6px;background:linear-gradient(90deg,#ffd24a,#ff9d00);font-weight:700;cursor:pointer}
+  table{width:100%;border-collapse:collapse;margin-top:14px}
+  th,td{padding:8px;border-bottom:1px solid #ffffff22;text-align:left}
+  .box{max-width:520px;background:#3a0307;padding:16px;border-radius:12px;border:1px solid #ffd24a;margin-bottom:14px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .head{display:flex;justify-content:space-between;align-items:center;max-width:520px}
+  #msg{margin-top:10px;min-height:20px;color:#5eea6a}
+  #msg.err{color:#ff7a7a}
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>Painel do administrador</h1>
+  <button id="btnLogout" hidden>Sair</button>
+</div>
+
+<div class="box" id="loginBox">
+  <div class="row">
+    <input id="inUser" placeholder="Usuário admin" autocomplete="username">
+    <input id="inPass" type="password" placeholder="Senha" autocomplete="current-password">
+    <button id="btnLogin">Entrar</button>
+  </div>
+</div>
+
+<div id="panel" hidden>
+  <div class="box">
+    <h3 style="margin-top:0">Adicionar crédito</h3>
+    <div class="row">
+      <select id="selUser"></select>
+      <input id="inAmount" type="number" step="0.01" placeholder="Valor (ex: 500 ou -50)">
+      <button id="btnCredit">Aplicar</button>
+    </div>
+    <p style="font-size:12px;margin:8px 0 0">Use valor negativo para retirar. O valor é em reais.</p>
+  </div>
+
+  <div class="box">
+    <h3 style="margin-top:0">Retorno do jogo</h3>
+    <div class="row">
+      <input id="inWeight" type="number" min="0" max="500" placeholder="Peso do vazio">
+      <button id="btnWeight">Salvar</button>
+    </div>
+    <p style="font-size:12px;margin:8px 0 0" id="rtpInfo"></p>
+  </div>
+
+  <table>
+    <thead><tr><th>Usuário</th><th>Saldo</th><th>Admin</th><th>Criado em</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <button id="btnRefresh" style="margin-top:12px">Atualizar lista</button>
+</div>
+
+<p id="msg"></p>
+<script src="admin.js"></script>
+</body>
+</html>

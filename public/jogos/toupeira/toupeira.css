@@ -1,0 +1,24 @@
+/* Pega-Toupeira: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 440px; text-align: center; }
+
+.holes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+  background: linear-gradient(180deg, #0b4a22, #06301a);
+}
+.hole {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 60%, #1a0a02 55%, #3a1a06 70%);
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, .6);
+  font-size: clamp(34px, 11vw, 52px);
+  cursor: pointer;
+  transition: transform .1s;
+}
+.hole.up { transform: translateY(-4px); }
+.hole.hit { background: radial-gradient(circle, rgba(103, 242, 122, .45), #1a0a02 70%); }
+.hole.bad { background: radial-gradient(circle, rgba(255, 77, 90, .6), #1a0a02 70%); }

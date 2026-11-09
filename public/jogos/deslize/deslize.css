@@ -1,0 +1,22 @@
+/* Quebra-Cabeça: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 400px; text-align: center; }
+
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+.piece {
+  aspect-ratio: 1;
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  background: linear-gradient(160deg, #9a1a10, #3a0508);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .4);
+  font: 900 clamp(32px, 11vw, 48px) "Poppins", sans-serif;
+  color: var(--gold);
+  cursor: pointer;
+}
+.piece:hover:not(:disabled) { filter: brightness(1.2); }
+.piece.empty { background: rgba(0, 0, 0, .3); border-color: transparent; box-shadow: none; cursor: default; }
+.puzzle.solved .piece:not(.empty) { background: linear-gradient(160deg, #1f8a3a, #0a4a18); border-color: var(--green); color: #fff; }

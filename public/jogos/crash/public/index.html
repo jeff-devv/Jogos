@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Crash Demo</title>
+<link rel="stylesheet" href="../../../tema.css">
+<link rel="stylesheet" href="crash.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>CRASH</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a id="voltar" href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <section class="history" aria-label="Histórico das últimas rodadas">
+    <span class="hlabel">ÚLTIMAS</span>
+    <div class="chips" id="history"><span class="empty">nenhuma rodada ainda</span></div>
+  </section>
+
+  <section class="chartcard" id="chartcard">
+    <canvas id="chart"></canvas>
+    <div class="overlay-info">
+      <div class="status" id="status">Aguardando rodada</div>
+      <div class="mult" id="mult">1.00x</div>
+      <div class="sub2" id="sub2">Defina a aposta e inicie a rodada</div>
+    </div>
+  </section>
+
+  <section class="display">
+    <div class="box"><label>SALDO</label><b id="balance">0,00</b></div>
+    <div class="box"><label>APOSTADO</label><b id="staked">0,00</b></div>
+    <div class="box prize"><label id="prizeLabel">PRÊMIO</label><b id="prize">0,00</b></div>
+  </section>
+
+  <section class="controls">
+    <div class="bet-block">
+      <label for="bet">APOSTA (créditos fictícios)</label>
+      <div class="betctl">
+        <button id="betHalf" aria-label="Metade">½</button>
+        <input id="bet" type="number" inputmode="decimal" min="1" max="1000" step="1" value="10">
+        <button id="betDouble" aria-label="Dobro">2×</button>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn start" id="start">INICIAR RODADA</button>
+      <button class="btn cash" id="cash" disabled>RETIRAR</button>
+    </div>
+  </section>
+
+  <p class="msg" id="msg"></p>
+
+  <nav class="footer">
+    <button class="link" id="sound">🔊 Som</button>
+    <button class="link" id="verify" disabled>🔍 Verificar última rodada</button>
+    <button class="link" id="reset">↺ Reiniciar saldo</button>
+  </nav>
+  <!--<p class="fine">Servidor decide o ponto de queda · vantagem da casa 4% · rodadas verificáveis (compromisso SHA-256)</p> -->
+</main>
+
+<div class="modal" id="modal"><div class="modal-body">
+  <h2>Verificação da rodada</h2>
+  <p>Antes de começar o servidor mostrou o <b>compromisso</b> (hash). No fim revelou a semente. Este navegador refaz as contas:</p>
+  <dl id="vdata"></dl>
+  <button id="closeModal">Fechar</button>
+</div></div>
+
+<script src="crash.js"></script>
+</body>
+</html>

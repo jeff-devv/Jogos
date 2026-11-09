@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Sequência de Cores</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="sequencia.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>SEQUÊNCIA DE CORES</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Observe as cores que acendem e repita na mesma ordem. A cada rodada entra mais uma.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>NÍVEL</label><b id="level">0</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena pads" id="pads">
+    <button class="pad-color c0" data-i="0" type="button" aria-label="Verde"></button>
+    <button class="pad-color c1" data-i="1" type="button" aria-label="Vermelho"></button>
+    <button class="pad-color c2" data-i="2" type="button" aria-label="Amarelo"></button>
+    <button class="pad-color c3" data-i="3" type="button" aria-label="Azul"></button>
+  </section>
+  <button class="again" id="startBtn" type="button">Começar</button>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="sequencia.js"></script>
+</body>
+</html>

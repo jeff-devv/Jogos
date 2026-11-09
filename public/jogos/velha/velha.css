@@ -1,0 +1,22 @@
+/* Jogo da Velha: só o que é do jogo (faixa, logo, barra, placar, .arena e .again vêm do tema.css) */
+.game { max-width: 420px; text-align: center; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+.square {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .35);
+  font: 900 clamp(40px, 14vw, 64px) "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background .15s;
+}
+.square:hover:empty { background: rgba(255, 210, 74, .12); }
+.square.x { color: var(--gold); }
+.square.o { color: #ff7a85; }
+.square.win { background: rgba(103, 242, 122, .25); }

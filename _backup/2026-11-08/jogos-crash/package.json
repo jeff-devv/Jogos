@@ -1,0 +1,1 @@
+{"name":"lucky-charm-demo","version":"2.0.0","description":"Demo educativa (Slot e Crash) com créditos fictícios e laboratório de integridade (sem dependências)","main":"server.js","scripts":{"start":"node server.js","test":"node --test","simulate":"node simulate.js","crash-sim":"node crash-sim.js","attacks":"node lab/run-attacks.js"}}

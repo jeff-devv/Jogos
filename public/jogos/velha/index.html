@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Jogo da Velha</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="velha.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>JOGO DA VELHA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Você é o X. Faça uma linha de três antes do computador.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>VOCÊ</label><b id="wins">0</b></div>
+    <div class="box"><label>EMPATES</label><b id="draws">0</b></div>
+    <div class="box"><label>CPU</label><b id="losses">0</b></div>
+  </section>
+
+  <section class="arena board" id="board"></section>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="velha.js"></script>
+</body>
+</html>

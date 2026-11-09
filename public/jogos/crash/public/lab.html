@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratório · Crash Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="crash.css">
+<link rel="stylesheet" href="lab.css">
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="banner lab">🧪 LABORATÓRIO ACADÊMICO · rodadas de TESTE · créditos fictícios isolados do jogo normal · só neste computador</div>
+
+<main class="game wide">
+  <nav class="nav">
+    <a href="/">✈ Crash</a>
+    <a class="active" href="/lab.html">🧪 Laboratório</a>
+    <a href="/slot.html">🎰 Slot</a>
+  </nav>
+  <header class="title"><h1 style="font-size:clamp(24px,6vw,34px)">LABORATÓRIO</h1><div class="sub">VULNERÁVEL × PROTEGIDO</div></header>
+
+  <section class="card">
+    <h3>1 · Escolha o que testar</h3>
+    <div class="pickers">
+      <div><label>Implementação</label>
+        <div class="seg" id="segEngine"><button data-v="vulnerable" class="on bad">Vulnerável</button><button data-v="secure">Protegida</button></div></div>
+      <div><label>Gerador de resultados</label>
+        <div class="seg" id="segRng"><button data-v="weak" class="on bad">Previsível (relógio)</button><button data-v="secure">Criptográfico</button></div></div>
+    </div>
+    <p class="hint" id="comboHint"></p>
+  </section>
+
+  <section class="card">
+    <h3>2 · Jogue uma rodada de teste</h3>
+    <div class="liveline"><span class="tag">TESTE</span><span id="liveMult" class="livemult">—</span><span id="liveInfo" class="hint"></span></div>
+    <div class="grid2">
+      <div><label for="bet">Aposta (créditos de teste)</label><input id="bet" type="text" value="10"></div>
+      <div><label for="claim">Multiplicador que o NAVEGADOR envia ao retirar</label><input id="claim" type="text" value="auto" title="auto = valor exibido. Digite outro número para simular uma requisição adulterada"></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn start" id="start">Iniciar rodada</button>
+      <button class="btn cash" id="cash">Retirar</button>
+      <button class="btn alt" id="replay">Reenviar a mesma retirada</button>
+      <button class="btn alt" id="late">Esperar a queda e retirar</button>
+      <button class="btn alt" id="negbet">Apostar −500</button>
+    </div>
+    <p class="msg" id="msg"></p>
+  </section>
+
+  <section class="card">
+    <h3>3 · Comparação (saldo de teste por combinação)</h3>
+    <table class="tbl" id="cmp"><thead><tr><th>Implementação</th><th>Gerador</th><th>Saldo</th><th>Δ vs 1000</th></tr></thead><tbody></tbody></table>
+    <p class="hint">Cada combinação tem conta própria. Reiniciar uma combinação: <button class="link" id="resetCombo">↺ reiniciar a selecionada</button></p>
+  </section>
+
+  <section class="card">
+    <h3>4 · Registro de eventos <a class="dl" id="csv" href="#">⬇ baixar CSV</a></h3>
+    <div class="tablewrap"><table class="tbl small" id="log"><thead><tr>
+      <th>#</th><th>evento</th><th>motor</th><th>gerador</th><th>aposta</th><th>multiplicador <b>enviado</b></th><th>multiplicador <b>do servidor</b></th><th>queda real</th><th><b>creditado</b></th><th>saldo</th><th>motivo</th>
+    </tr></thead><tbody></tbody></table></div>
+    <p class="hint">Também gravado em <code>logs/lab-events.jsonl</code>. Compare a coluna “enviado” com “do servidor” e “creditado”.</p>
+  </section>
+
+  <section class="card" id="explain"><h3>O que cada versão faz de errado (ou certo)</h3><div class="two"><div id="exV"></div><div id="exS"></div></div>
+    <p class="hint">Ataques automáticos e relatório: no terminal rode <code>node lab/run-attacks.js</code>. Previsão do gerador fraco: ataque A6.</p>
+  </section>
+</main>
+<script src="lab.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucky Charm · Cobrinha</title>
+<link rel="stylesheet" href="../../tema.css">
+<link rel="stylesheet" href="cobrinha.css">
+</head>
+<body>
+<div class="banner">DEMONSTRAÇÃO EDUCATIVA · créditos fictícios · sem dinheiro real e sem pagamentos</div>
+
+<main class="game">
+  <header class="logo">
+    <h1>LUCKY CHARM <small>COBRINHA</small></h1>
+  </header>
+
+  <div class="userbar">
+    <span id="hUser"></span>
+    <a href="../../home.html">← Voltar aos jogos</a>
+  </div>
+
+  <p class="info">Coma as maçãs e cresça sem bater nas paredes nem em você. Use as setas, WASD, deslize o dedo ou os botões.</p>
+
+  <section class="stats">
+    <div class="box prize"><label>PONTOS</label><b id="score">0</b></div>
+    <div class="box"><label>RECORDE</label><b id="best">0</b></div>
+  </section>
+
+  <section class="arena" id="arena">
+    <canvas id="canvas"></canvas>
+    <div class="arena-msg" id="msg"><p id="msgText">Toque ou aperte uma seta para começar</p></div>
+  </section>
+  <div class="pad">
+    <button class="tool" data-dir="up" type="button">▲</button>
+    <button class="tool" data-dir="left" type="button">◀</button>
+    <button class="tool" data-dir="down" type="button">▼</button>
+    <button class="tool" data-dir="right" type="button">▶</button>
+  </div>
+
+  <p class="result" id="result" aria-live="polite"></p>
+  <button class="again" id="again" type="button" hidden>Jogar de novo</button>
+</main>
+<script src="../../sessao.js"></script>
+<script src="cobrinha.js"></script>
+</body>
+</html>

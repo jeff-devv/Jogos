@@ -1,0 +1,305 @@
+/* ============================================================
+   LUCKY CHARM · layout do slot
+   Carrega DEPOIS do style.css (só acerta o "casco" da página).
+   Não mexe em .reels / .reel / .strip / .glass / .payline,
+   então a animação dos rolos continua igual.
+   Para desfazer: apague a linha <link> deste arquivo no index.html.
+   ============================================================ */
+:root {
+  --gold: #ffd24a;
+  --gold-2: #ff9d00;
+  --ink: #2a0005;
+  --cream: #ffe9b0;
+  --line: rgba(255, 210, 74, .38);
+  --panel: rgba(34, 0, 6, .62);
+}
+
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; background: #3a0307; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(120% 75% at 50% 0%, #d6262e 0%, #8f0b14 48%, #3a0307 100%) fixed;
+  color: #fff3d2;
+  font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+}
+
+/* aviso de demonstração: faixa fina */
+.banner {
+  padding: 6px 12px;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: .04em;
+  text-align: center;
+  color: var(--cream);
+  background: rgba(0, 0, 0, .38);
+  border-bottom: 1px solid var(--line);
+}
+
+/* coluna central */
+.game {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 14px 16px 32px;
+}
+
+/* ---------- título ---------- */
+.logo {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 4px 0 2px;
+}
+.logo h1 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(26px, 7.2vw, 38px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .06em;
+  background: linear-gradient(180deg, #fff7c9 0%, #ffd24a 55%, #ff9d00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(90, 0, 8, .85)) drop-shadow(0 6px 14px rgba(0, 0, 0, .35));
+}
+.logo h1 small {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 10px;
+  vertical-align: middle;
+  font-size: .38em;
+  letter-spacing: .22em;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .28);
+  -webkit-text-fill-color: var(--gold);
+}
+.logo .deco {
+  position: static !important;
+  width: auto;
+  height: auto;
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .45));
+}
+.logo .deco.left { transform: rotate(-12deg); }
+.logo .deco.right { transform: rotate(12deg); }
+
+/* ---------- barra do usuário ---------- */
+.userbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0 16px;
+  padding: 8px 10px 8px 14px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+}
+.userbar > span {
+  font-weight: 700;
+  color: var(--gold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.userbar > span::before { content: "👤 "; }
+.userbar a,
+.userbar button,
+.footer .link {
+  font: 600 13px "Poppins", "Segoe UI", sans-serif;
+  color: var(--cream);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 210, 74, .09);
+  cursor: pointer;
+  transition: background .15s, color .15s, transform .15s;
+}
+.userbar a:hover,
+.userbar button:hover,
+.footer .link:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* ---------- máquina ---------- */
+.machine {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;      /* não encolhe a moldura dos rolos */
+  gap: 14px;
+}
+.frame { filter: drop-shadow(0 16px 28px rgba(0, 0, 0, .5)); }
+
+.winbar {
+  align-self: center;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  min-width: 190px;
+  padding: 8px 26px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .38);
+  border: 1px solid var(--line);
+}
+.winbar span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--cream);
+  opacity: .85;
+}
+.winbar b {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 16px rgba(255, 210, 74, .45);
+}
+
+/* ---------- painel inferior ---------- */
+.dock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(64, 4, 11, .9), rgba(30, 0, 5, .92));
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stats .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 78px;
+  padding: 10px 8px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, .34);
+  border: 1px solid rgba(255, 210, 74, .22);
+}
+.stats .box label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--gold);
+}
+.stats .box > b {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .5);
+}
+.stats .box.bet .betctl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.stats .box.bet .betctl b {
+  min-width: 64px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.stats .box.bet .betctl button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffe27a, #ff9d00);
+  cursor: pointer;
+  box-shadow: 0 3px 0 #9a5a00;
+  transition: transform .1s, box-shadow .1s;
+}
+.stats .box.bet .betctl button:active { transform: translateY(2px); box-shadow: 0 1px 0 #9a5a00; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.controls .spin { flex: none; }
+.controls .side.on {
+  background: linear-gradient(90deg, #5eea6a, #0f8a24);
+  color: #fff;
+  border: 1px solid #7dff9a;
+  box-shadow: 0 0 14px rgba(94, 234, 106, .6);
+}
+.controls .side:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.controls .side:active { transform: translateY(1px); }
+
+/* ---------- rodapé e mensagens ---------- */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.msg {
+  min-height: 22px;
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ---------- janela da tabela de prêmios ---------- */
+.modal-body {
+  box-sizing: border-box;
+  width: min(92vw, 420px);
+  max-height: 86vh;
+  overflow: auto;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #4a050c, #2a0005);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .65);
+}
+
+/* ---------- foco de teclado ---------- */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fff3a0;
+  outline-offset: 2px;
+}
+
+/* ---------- telas pequenas ---------- */
+@media (max-width: 400px) {
+  .game { padding: 10px 10px 24px; }
+  .logo .deco { display: none; }
+  .dock { padding: 12px; }
+  .controls { gap: 12px; }
+  .stats .box > b { font-size: 22px; }
+}
